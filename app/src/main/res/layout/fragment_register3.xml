@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".Fragment.RegisterFragment3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#e5ebe8">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/samliphopangchebasic"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:text="학수번호 입력 후 신청"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_gravity="center">
+
+        <EditText
+            android:id="@+id/classnum_input"
+            android:layout_width="270dp"
+            android:layout_height="58dp"
+            android:layout_centerInParent="true"
+            android:ems="6"
+            android:hint="학수번호를 입력하세요."
+            android:inputType="text"
+            android:gravity="center"
+            android:textColorHint="#a2a2a2"
+            android:textColor="#828282"
+            android:fontFamily="@font/samliphopangchebasic"
+            android:background="@drawable/edittext_register"
+            />
+
+        <EditText
+            android:id="@+id/division_input"
+            android:layout_width="270dp"
+            android:layout_height="58dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/classnum_input"
+            android:ems="2"
+            android:hint="분반"
+            android:inputType="text"
+            android:gravity="center"
+            android:textColorHint="#a2a2a2"
+            android:textColor="#828282"
+            android:fontFamily="@font/samliphopangchebasic"
+            android:background="@drawable/edittext_register"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_btn3"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/division_input"
+            android:layout_marginTop="10dp"
+            android:text="신청"/>
+    </RelativeLayout>
+
+</FrameLayout>

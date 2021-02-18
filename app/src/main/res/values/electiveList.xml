@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="elective">
+        <item>교양교직학부</item>
+    </string-array>
+    <string-array name="electives">
+        <item>제 1영역</item>
+        <item>제 2영역</item>
+        <item>제 3영역</item>
+        <item>제 4영역</item>
+        <item>제 5영역</item>
+    </string-array>
+</resources>

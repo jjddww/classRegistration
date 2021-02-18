@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".Fragment.RegisterFragment2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:orientation="vertical"
+        android:background="#e5ebe8">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="6dp"
+        android:id="@+id/register_radioGroup"
+        android:checkedButton="@id/radio_major"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_major"
+            android:buttonTint="#46ce88"
+            android:textColor="#525252"
+            android:fontFamily="@font/samliphopangchebasic"
+            android:text="전공/교필"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_electives"
+            android:buttonTint="#46ce88"
+            android:textColor="#525252"
+            android:fontFamily="@font/samliphopangchebasic"
+            android:text="교양선택"/>
+
+    </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/register_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/spinner_register1"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:entries="@array/major"
+                android:theme="@style/spinnerTheme"
+                android:background="@drawable/spinner_design"
+                android:popupBackground="#f5f5f5"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="15dp" />
+            <Spinner
+                android:id="@+id/spinner_register2"
+                android:visibility="gone"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
+                android:entries="@array/elective"
+                android:theme="@style/spinnerTheme"
+                android:background="@drawable/spinner_design"
+                android:popupBackground="#f5f5f5"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="15dp" />
+            <Spinner
+                android:id="@+id/spinner_register3"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="15dp"
+                android:entries="@array/grade"
+                android:theme="@style/spinnerTheme"
+                android:background="@drawable/spinner_design"
+                android:popupBackground="#f5f5f5"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="15dp" />
+            <Spinner
+                android:id="@+id/spinner_register4"
+                android:visibility="gone"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="15dp"
+                android:entries="@array/electives"
+                android:theme="@style/spinnerTheme"
+                android:background="@drawable/spinner_design"
+                android:popupBackground="#f5f5f5"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="15dp" />
+            <Button
+                android:id="@+id/search_register"
+                android:layout_width="70dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="13dp"
+                android:text="검색"
+                android:gravity="center"
+                android:background="@drawable/search_btn"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/samliphopangchebasic"
+                android:textSize="17sp"
+                android:layout_marginStart="13dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="83dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/register_search"
+        android:scrollbars="vertical"/>
+
+</FrameLayout>

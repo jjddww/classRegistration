@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradation1"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/logout"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/logout"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:text="2021학년도 1학기"
+        android:textColor="#727272"
+        android:textSize="37dp"
+        android:fontFamily="@font/samliphopangchebasic"
+        android:textStyle="bold"
+        />
+
+    <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:src="@drawable/woman"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/img"
+            android:fontFamily="@font/samliphopangchebasic"
+            android:textColor="#606060"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/usrInfo"
+            android:layout_below="@+id/name"
+            android:layout_toRightOf="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/samliphopangchebasic"
+            android:textColor="#606060"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usrInfo"
+            android:layout_toRightOf="@+id/img"
+            android:layout_marginLeft="30dp"
+            android:textColor="#606060"
+            android:fontFamily="@font/samliphopangchebasic"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+
+        <Button
+            android:id="@+id/noticeBtn"
+            android:layout_width="111dp"
+            android:layout_height="90dp"
+            android:text="공지사항"
+            android:layout_marginLeft="65dp"
+            android:onClick="notice"
+            android:textSize="25dp"
+            android:background="@drawable/btn_design_1"
+            android:fontFamily="@font/samliphopangchebasic"/>
+        <Button
+            android:id="@+id/lookUpBtn"
+            android:layout_width="111dp"
+            android:layout_height="90dp"
+            android:textSize="25dp"
+            android:text="과목조회"
+            android:layout_marginLeft="240dp"
+            android:onClick="lookup"
+            android:background="@drawable/btn_design_1"
+            android:fontFamily="@font/samliphopangchebasic"/>
+
+        <Button
+            android:id="@+id/reservation"
+            android:layout_width="111dp"
+            android:layout_height="90dp"
+            android:textSize="25dp"
+            android:text="장바구니"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="180dp"
+            android:onClick="reserve"
+            android:background="@drawable/btn_design_1"
+            android:fontFamily="@font/samliphopangchebasic"/>
+
+        <Button
+            android:id="@+id/registration"
+            android:layout_width="111dp"
+            android:layout_height="90dp"
+            android:textSize="25dp"
+            android:text="수강신청"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="180dp"
+            android:onClick="registration"
+            android:background="@drawable/btn_design_1"
+            android:fontFamily="@font/samliphopangchebasic"/>
+    </RelativeLayout>
+</LinearLayout>
