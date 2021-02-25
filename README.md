@@ -1,7 +1,10 @@
 # classRegistration
 # 수강신청 도움 앱
 
+### 개발환경
 *서버 - Linux Ubuntu, Node.js
+
+*클라이언트 - Android Studio, Java
 
 *데이터베이스 - MYSQL
 
@@ -11,8 +14,17 @@
 ### 1. 로그인 및 로그아웃
 서버로부터 받은 응답에 따라 처리하도록 설계
 
+로그인 성공 시
 
-![로그인](https://user-images.githubusercontent.com/50095740/109131934-a1e6f680-7796-11eb-8668-2a7963c51d9b.gif)  ![비번틀림](https://user-images.githubusercontent.com/50095740/109130261-dce82a80-7794-11eb-9c4f-72e2981e516c.gif)  ![로그아웃](https://user-images.githubusercontent.com/50095740/109129950-8975dc80-7794-11eb-91aa-5002149384ed.gif)
+![로그인](https://user-images.githubusercontent.com/50095740/109131934-a1e6f680-7796-11eb-8668-2a7963c51d9b.gif)  
+
+정보가 틀렸을 경우
+
+![비번틀림](https://user-images.githubusercontent.com/50095740/109130261-dce82a80-7794-11eb-9c4f-72e2981e516c.gif)  
+
+로그아웃
+
+![로그아웃](https://user-images.githubusercontent.com/50095740/109129950-8975dc80-7794-11eb-91aa-5002149384ed.gif)
 
 
 
@@ -29,10 +41,29 @@
 
 
 ### 3. 과목 조회
-Spinner가 자신의 전공으로 미리 셋팅 되어 있음. 리사이클러뷰를 사용하여 목록을 보임.
+Spinner가 자신의 전공으로 미리 셋팅 되어 있음. 
+
+Retrofit통신으로 서버로부터 받아온 json 데이터를 파싱한 후 리사이클러뷰를 사용하여 목록을 보임.
+
+
+![과목조회](https://user-images.githubusercontent.com/50095740/109138959-4caee300-779e-11eb-832b-67500e00b7be.gif)
+
 
 ### 4. 장바구니 담기, 삭제. 
 리사이클러뷰를 사용하여 목록을 보임.
+이미 장바구니에 담은 과목을 담으려 시도할 경우 메시지를 띄움.
+
+조회 화면
+
+![KakaoTalk_20210225_192218063](https://user-images.githubusercontent.com/50095740/109139550-fbebba00-779e-11eb-8825-55c7ce572a98.jpg)  ![KakaoTalk_20210225_192218063_03](https://user-images.githubusercontent.com/50095740/109139626-0d34c680-779f-11eb-9504-7808f5f2ee41.jpg)  ![KakaoTalk_20210225_192218063_04](https://user-images.githubusercontent.com/50095740/109139669-1de53c80-779f-11eb-9e4e-d10da69d8c0a.jpg)
+
+강의 신청완료, 중복신청 메시지
+
+![KakaoTalk_20210225_192218063_01](https://user-images.githubusercontent.com/50095740/109139862-571dac80-779f-11eb-97b4-e90c45d3d340.jpg)  ![KakaoTalk_20210225_192218063_02](https://user-images.githubusercontent.com/50095740/109139920-643a9b80-779f-11eb-929a-a7a8ae91897f.jpg)
+
 
 ### 5. 수강신청 및 시간표 확인. 
+
 리사이클러뷰를 사용하여 목록을 보임.
+
+
