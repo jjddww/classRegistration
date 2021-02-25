@@ -55,11 +55,9 @@ Retrofit통신으로 서버로부터 받아온 json 데이터를 파싱한 후 �
 
 조회 화면
 
-![KakaoTalk_20210225_192218063](https://user-images.githubusercontent.com/50095740/109139550-fbebba00-779e-11eb-8825-55c7ce572a98.jpg)  ![KakaoTalk_20210225_192218063_03](https://user-images.githubusercontent.com/50095740/109139626-0d34c680-779f-11eb-9504-7808f5f2ee41.jpg)  ![KakaoTalk_20210225_192218063_04](https://user-images.githubusercontent.com/50095740/109139669-1de53c80-779f-11eb-9e4e-d10da69d8c0a.jpg)
 
 강의 신청완료, 중복신청 메시지
 
-![KakaoTalk_20210225_192218063_01](https://user-images.githubusercontent.com/50095740/109139862-571dac80-779f-11eb-97b4-e90c45d3d340.jpg)  ![KakaoTalk_20210225_192218063_02](https://user-images.githubusercontent.com/50095740/109139920-643a9b80-779f-11eb-929a-a7a8ae91897f.jpg)
 
 
 ### 5. 수강신청 및 시간표 확인. 
