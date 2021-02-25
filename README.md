@@ -57,10 +57,11 @@ Retrofit통신으로 서버로부터 받아온 json 데이터를 파싱한 후 �
 
 <img src="https://user-images.githubusercontent.com/50095740/109141001-8ed92400-77a0-11eb-89e4-90f5bc2b44d3.jpg" width="350" height="600">   <img src="https://user-images.githubusercontent.com/50095740/109141531-2e96b200-77a1-11eb-8b14-87c06f432d5a.jpg" width="350" height="600">
 
-##### *강의 신청완료, 중복신청 메시지
+##### *장바구니 담기 신청완료, 중복 과목 메시지
 
 <img src="https://user-images.githubusercontent.com/50095740/109142078-cb594f80-77a1-11eb-99a6-c4506a9a0138.jpg" width="350" height="600">   <img src="https://user-images.githubusercontent.com/50095740/109142216-f2b01c80-77a1-11eb-995d-6503c41cae6f.jpg" width="350" height="600">
 
+##### *장바구니 내역 삭제
 
 ### 5. 수강신청 및 시간표 확인. 
 
