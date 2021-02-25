@@ -11,21 +11,9 @@
 ### 1. 로그인 및 로그아웃
 서버로부터 받은 응답에 따라 처리하도록 설계
 
-로그인 성공 화면
 
-![로그인](https://user-images.githubusercontent.com/50095740/109131934-a1e6f680-7796-11eb-8668-2a7963c51d9b.gif)
+![로그인](https://user-images.githubusercontent.com/50095740/109131934-a1e6f680-7796-11eb-8668-2a7963c51d9b.gif)  ![비번틀림](https://user-images.githubusercontent.com/50095740/109130261-dce82a80-7794-11eb-9c4f-72e2981e516c.gif)  ![로그아웃](https://user-images.githubusercontent.com/50095740/109129950-8975dc80-7794-11eb-91aa-5002149384ed.gif)
 
-
-정보가 틀렸을 경우
-
-
-![비번틀림](https://user-images.githubusercontent.com/50095740/109130261-dce82a80-7794-11eb-9c4f-72e2981e516c.gif)
-
-
-로그아웃 
-
-
-![로그아웃](https://user-images.githubusercontent.com/50095740/109129950-8975dc80-7794-11eb-91aa-5002149384ed.gif)
 
 
 
