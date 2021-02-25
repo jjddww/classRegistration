@@ -54,8 +54,7 @@ Retrofit통신으로 서버로부터 받아온 json 데이터를 파싱한 후 �
 이미 장바구니에 담은 과목을 담으려 시도할 경우 메시지를 띄움.
 
 과목조회 화면
-
-![KakaoTalk_20210225_192218063](https://user-images.githubusercontent.com/50095740/109141001-8ed92400-77a0-11eb-89e4-90f5bc2b44d3.jpg){: width="200" height="400"}
+<img src="https://user-images.githubusercontent.com/50095740/109141001-8ed92400-77a0-11eb-89e4-90f5bc2b44d3.jpg" width="200" height="380">
 
 강의 신청완료, 중복신청 메시지
 
