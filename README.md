@@ -109,5 +109,5 @@ MY-SQL의 트리거 사용으로 수강신청과 삭제 동작이 일어날 때�
 
 
 ##### *수강신청 내역 확인 및 시간표 확인
-<img src="https://user-images.githubusercontent.com/50095740/109157675-b25a9980-77b5-11eb-95a3-81e8c0300da9.jpg" width="260" height="500">     <img src="https://user-images.githubusercontent.com/50095740/109157742-cbfbe100-77b5-11eb-906d-1a6938182c97.jpg" width="300" height="580">
+<img src="https://user-images.githubusercontent.com/50095740/109157675-b25a9980-77b5-11eb-95a3-81e8c0300da9.jpg" width="300" height="580">        <img src="https://user-images.githubusercontent.com/50095740/109157742-cbfbe100-77b5-11eb-906d-1a6938182c97.jpg" width="300" height="580">
 
