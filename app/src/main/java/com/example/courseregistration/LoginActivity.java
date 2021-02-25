@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),"존재하지 않는 학번입니다.", Toast.LENGTH_SHORT).show();
 
                             else if (access.equals("0"))
-                                Toast.makeText(getApplicationContext(),"비밆번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
 
                             else{
                                 //로그인 성공
