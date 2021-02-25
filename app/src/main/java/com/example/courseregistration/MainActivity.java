@@ -1,21 +1,17 @@
 package com.example.courseregistration;
 
-import androidx.appcompat.app.ActionBar;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.courseregistration.connection.*;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -68,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //로그아웃 버튼 동작
         Button logout = (Button) findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,31 +100,32 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    //공지사항 메뉴 선택
     public void notice(View v){
         Intent notice = new Intent(this, NoticeActivity.class);
         load(retrofitAPI, ctx, notice, id);
     }
 
-
+    //과목조회 메뉴 선택
     public void lookup(View v){
         Intent lookup = new Intent (this, SearchClassActivity.class);
         load(retrofitAPI, ctx, lookup, id);
     }
 
-
+    //장바구니 메뉴 선택
     public void reserve(View v){
         Intent reserve = new Intent(this, reserveActivity.class);
         load(retrofitAPI, ctx, reserve, id);
     }
 
-
+    //수강신청 메뉴 선택
     public void registration(View v){
         Intent registration = new Intent(this, RegisterActivity.class);
         load(retrofitAPI, ctx, registration, id);
     }
 
 
+    //선택 메뉴를 실행하는 화면
     public void load(RetrofitAPI retrofitAPI, Context context, Intent intent, String ID){
         Intent login = new Intent(context, LoginActivity.class);
         retrofitAPI.getConnect(ID).enqueue(new Callback<ServiceInterface>() {

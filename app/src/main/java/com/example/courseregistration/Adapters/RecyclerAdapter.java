@@ -35,6 +35,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+//과목 조회, 장바구니 목록을 보여주는 리사이클러뷰 어댑터
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<ArrayList<String>> list;
     int select;
@@ -79,6 +80,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             reserve = itemView.findViewById(R.id.reserve2);
             btn = itemView.findViewById(R.id.reserve_Btn);
 
+            //장바구니 담기 버튼 동작
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -86,7 +88,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     String id = PreferenceManager.getString(itemView.getContext(), "userID");
                     String classnum_str = classnum.getText().toString();
                     String division_str = division.getText().toString();
-                    Map map = new HashMap(); map.put("id",id); map.put("classnum", classnum_str); map.put("division",division_str);
+
+                    Map map = new HashMap();
+                    map.put("id",id);
+                    map.put("classnum", classnum_str);
+                    map.put("division",division_str);
+
                     RetrofitAPI retrofitAPI = ServiceGenerator.createService(RetrofitAPI.class, token);
                     int pos = getAdapterPosition();
 
@@ -96,6 +103,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                             ArrayList<String>child = new ArrayList<>();
                             AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
+
                             if(response.isSuccessful()){
                                 try{
                                     final JSONArray classInfo = new JSONArray(response.body().string());
@@ -191,6 +199,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             reserve = itemView.findViewById(R.id.reserve3);
             personnel = itemView.findViewById(R.id.personnel3);
             btn = itemView.findViewById(R.id.reserve_delete_btn);
+
+            //장바구니에 담은 과목 삭제 버튼 동작
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -198,7 +208,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     String id = PreferenceManager.getString(itemView.getContext(), "userID");
                     String classnum_str = classnum.getText().toString();
                     String division_str = division.getText().toString();
-                    Map map = new HashMap(); map.put("id",id); map.put("classnum", classnum_str); map.put("division",division_str);
+                    Map map = new HashMap();
+                    map.put("id",id);
+                    map.put("classnum", classnum_str);
+                    map.put("division",division_str);
                     RetrofitAPI retrofitAPI = ServiceGenerator.createService(RetrofitAPI.class, token);
                     int pos = getAdapterPosition();
 
@@ -268,6 +281,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public int getItemViewType(int position) {
+        //프래그먼트로부터 select 변수를 받아와 뷰 홀더를 선택
+
         if (select == 0)
             return 0;
         else if(select ==1)
@@ -283,6 +298,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //case에 따라 리스트 형태가 달라짐
 
         switch (viewType){
             case 0:
@@ -330,7 +347,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
 
         else if (holder instanceof Holder3){
-            Context ctx = holder.itemView.getContext();
             ((Holder3) holder).classnum.setText(list.get(position).get(0));
             ((Holder3) holder).classname.setText(list.get(position).get(1));
             ((Holder3) holder).division.setText("("+list.get(position).get(2)+")");

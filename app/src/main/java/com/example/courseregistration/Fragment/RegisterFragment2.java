@@ -2,13 +2,11 @@ package com.example.courseregistration.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,30 +16,26 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.example.courseregistration.Adapters.RecyclerAdapter;
 import com.example.courseregistration.Adapters.RecyclerAdapter_reserve;
 import com.example.courseregistration.LoginActivity;
 import com.example.courseregistration.R;
 import com.example.courseregistration.connection.PreferenceManager;
 import com.example.courseregistration.connection.RetrofitAPI;
 import com.example.courseregistration.connection.ServiceGenerator;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+//수강신청 메뉴의 두 번째 탭 프래그먼트
+//직접 과목 검색 후 수강신청
 public class RegisterFragment2 extends Fragment {
     static String id,token,major,grade,division;
     static RecyclerAdapter_reserve adapter;
@@ -100,6 +94,7 @@ public class RegisterFragment2 extends Fragment {
         map.put("id",id); map.put("major", userMajor); map.put("grade", userGrade+"학년");
         load1(retrofitAPI, map);
 
+        ///스피너가 사용자의 전공으로 미리 선택되어 있도록 셋팅
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -112,7 +107,7 @@ public class RegisterFragment2 extends Fragment {
             }
         });
 
-
+        ///스피너가 사용자의 학년으로 미리 선택되어 있도록 셋팅
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -137,6 +132,7 @@ public class RegisterFragment2 extends Fragment {
             }
         });
 
+        //전공 라디오버튼 선택 시
         majorBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -155,7 +151,7 @@ public class RegisterFragment2 extends Fragment {
             }
         });
 
-
+        //교양 라디오버튼 선택 시
         electivesBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -175,8 +171,7 @@ public class RegisterFragment2 extends Fragment {
             }
         });
 
-
-
+        //과목 검색 버튼 동작
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -229,6 +224,7 @@ public class RegisterFragment2 extends Fragment {
         dialog.show();
     }
 
+    //전공 검색 결과 로드하는 메소드
     private void load1(RetrofitAPI retrofitAPI, Map map){
         Intent login = new Intent(getActivity(), LoginActivity.class);
         retrofitAPI.SearchMajor(map).enqueue(new Callback<ResponseBody>() {
@@ -282,6 +278,7 @@ public class RegisterFragment2 extends Fragment {
         });
     }
 
+    //교양과목 검색 결과 로드하는 메소드
     private void load2(RetrofitAPI retrofitAPI, Map map){
         Intent login = new Intent(getActivity(), LoginActivity.class);
         retrofitAPI.SearchElectives(map).enqueue(new Callback<ResponseBody>() {

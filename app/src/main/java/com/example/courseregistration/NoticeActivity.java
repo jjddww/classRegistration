@@ -3,11 +3,8 @@ package com.example.courseregistration;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 public class NoticeActivity extends AppCompatActivity {
 
     @Override

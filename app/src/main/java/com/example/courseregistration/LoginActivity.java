@@ -65,7 +65,10 @@ public class LoginActivity extends AppCompatActivity {
 
                             else if (access.equals("0"))
                                 Toast.makeText(getApplicationContext(),"비밆번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+
                             else{
+                                //로그인 성공
+                                //받아온 사용자 정보와 토큰을 저장
                                 PreferenceManager.setString(ctx, "userName", response.body().getUsrName());
                                 PreferenceManager.setString(ctx, "userID", response.body().getUsrID());
                                 PreferenceManager.setString(ctx, "accessToken", access);

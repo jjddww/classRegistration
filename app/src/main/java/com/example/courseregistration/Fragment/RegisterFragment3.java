@@ -1,34 +1,29 @@
 package com.example.courseregistration.Fragment;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.courseregistration.LoginActivity;
 import com.example.courseregistration.R;
 import com.example.courseregistration.connection.PreferenceManager;
 import com.example.courseregistration.connection.RetrofitAPI;
 import com.example.courseregistration.connection.ServiceGenerator;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+//수강신청 메뉴의 세 번째 탭 프래그먼트
+//학수번호와 분반 입력 후 수강신청
 public class RegisterFragment3 extends Fragment {
     static String  id, token;
     static EditText classnum_edit;
@@ -57,6 +52,7 @@ public class RegisterFragment3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_register3, container, false);
         id= PreferenceManager.getString(getActivity().getApplicationContext(),"userID");
         token = PreferenceManager.getString(getActivity().getApplicationContext(),"accessToken");
@@ -140,6 +136,8 @@ public class RegisterFragment3 extends Fragment {
 
         return view;
     }
+
+    //다이얼로그 메소드
 
     public void showDialog(String str, AlertDialog.Builder builder){
         builder.setTitle("안내메시지");

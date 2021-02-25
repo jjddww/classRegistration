@@ -4,16 +4,15 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.example.courseregistration.Adapters.ViewPagerAdapter;
 import com.example.courseregistration.Fragment.ReserveFragment1;
 import com.example.courseregistration.Fragment.Search1;
 import com.example.courseregistration.Fragment.Search2;
 import com.google.android.material.tabs.TabLayout;
+
+//장바구니 기능 액티비티
 
 public class reserveActivity extends AppCompatActivity {
 
@@ -33,7 +32,7 @@ public class reserveActivity extends AppCompatActivity {
         Search2 search2 = new Search2(1);
 
         ViewPager viewpager = findViewById(R.id.viewpager_reserve); //뷰페이저
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager()); //뷰페이저 어댑터에 search1, search2 프래그먼트가 붙어있음
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager()); //뷰페이저 어댑터에 search1, search2 프래그먼트를 붙임.
         adapter.addItem(search1); adapter.addItem(search2); adapter.addItem(reserveFragment1);
         viewpager.setAdapter(adapter);
 

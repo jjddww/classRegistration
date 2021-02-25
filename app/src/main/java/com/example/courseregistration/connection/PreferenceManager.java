@@ -3,6 +3,8 @@ package com.example.courseregistration.connection;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+//로그인 시 토큰을 비롯한 사용자 정보를 담는 SharedSavePreference를 이용하기 위한 class
+
 public class PreferenceManager {
     public static final String PREFERENCES_NAME = "userPreference";
     private static final String DEFAULT_VALUE_STRING = "";

@@ -36,6 +36,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+//장바구니에 담은 과목 내역 조회
+
 public class ReserveFragment1 extends Fragment {
     static ArrayList<ArrayList<String>> list;
     static ArrayList<String> child;
@@ -132,6 +134,7 @@ public class ReserveFragment1 extends Fragment {
                     builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+
                             Intent intent = getActivity().getIntent();
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
                                     | Intent.FLAG_ACTIVITY_NO_ANIMATION);

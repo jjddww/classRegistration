@@ -3,40 +3,35 @@ package com.example.courseregistration.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
-import com.example.courseregistration.Adapters.RecyclerAdapter;
 import com.example.courseregistration.Adapters.RecyclerAdapter_reserve;
 import com.example.courseregistration.LoginActivity;
 import com.example.courseregistration.R;
 import com.example.courseregistration.connection.PreferenceManager;
 import com.example.courseregistration.connection.RetrofitAPI;
 import com.example.courseregistration.connection.ServiceGenerator;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+//수강신청 메뉴의 네 번째 탭 프래그먼트
+//수강신청 내역 조회
 public class RegisterFragment4 extends Fragment {
     static int select;
     static String id,token;
@@ -85,6 +80,7 @@ public class RegisterFragment4 extends Fragment {
         retrofitAPI.getRegister_list(map).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
                 if(response.isSuccessful()){
                     list.clear();
                     child = new ArrayList<>();

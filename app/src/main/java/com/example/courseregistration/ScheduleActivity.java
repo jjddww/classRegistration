@@ -19,27 +19,23 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.courseregistration.connection.PreferenceManager;
 import com.example.courseregistration.connection.RetrofitAPI;
 import com.example.courseregistration.connection.ServiceGenerator;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+//시간표를 시각화 하는 액티비티
 public class ScheduleActivity extends AppCompatActivity {
     static String token, id;
     static RetrofitAPI retrofitAPI;
@@ -68,12 +64,18 @@ public class ScheduleActivity extends AppCompatActivity {
         String [] colors = getResources().getStringArray(R.array.colors);
         Context ctx =this;
 
-
+        //생성해놓은 텍스트 수 만큼 배열을 생성한 뒤 배열에 텍스트뷰를 삽입
         TextView [] textView = new TextView [50];
+
+        //텍스트 뷰 이름을 좌표형식으로 b0,b1 등으로 설정함.
+        //열을 저장
         String [] columns = {"b","c","d","e","f"};
+
         for(int i =0; i<columns.length;i++){
             for(int j =0; j<10; j++){
                 String rID = columns[i]+Integer.toString(j+1);
+
+                //ID 값으로 텍스트뷰의 resource 값을 찾음.
                 int resource = getResources().getIdentifier(rID, "id", this.getPackageName());
                 textView[i*10+j] = findViewById(resource);
             }
@@ -152,7 +154,7 @@ public class ScheduleActivity extends AppCompatActivity {
     public int dpToPx(int dp) { float density = getResources().getDisplayMetrics().density; return Math.round((float) dp * density); }
 
 
-    //시간표 셋팅하는 함수
+    //시간표 셋팅하여 디스플레이에 나타내는 함수
     public void setTimeTable(TextView[]textView, ArrayList<ArrayList<String>> list, String[]colors){
         ArrayList<ArrayList<String>> classList = new ArrayList<>();
         ArrayList<String>childList;

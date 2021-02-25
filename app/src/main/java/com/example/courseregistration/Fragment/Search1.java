@@ -1,48 +1,39 @@
 package com.example.courseregistration.Fragment;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.courseregistration.Adapters.RecyclerAdapter;
 import com.example.courseregistration.LoginActivity;
 import com.example.courseregistration.R;
-import com.example.courseregistration.SearchClassActivity;
 import com.example.courseregistration.connection.PreferenceManager;
 import com.example.courseregistration.connection.RetrofitAPI;
 import com.example.courseregistration.connection.ServiceGenerator;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+//전공 과목 조회
 public class Search1 extends Fragment {
     static ArrayList<ArrayList<String>> list;
     static ArrayList<String> child;

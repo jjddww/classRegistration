@@ -17,6 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
+//과목 조회 액티비티
 public class SearchClassActivity extends AppCompatActivity {
     ArrayList<String> list;
 
@@ -24,6 +25,8 @@ public class SearchClassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_class);
+
+        //툴바 디자인
         Toolbar toolbar = findViewById(R.id.toolbar_search);
         setSupportActionBar(toolbar);
         ActionBar actionBar =getSupportActionBar();
@@ -35,7 +38,7 @@ public class SearchClassActivity extends AppCompatActivity {
         Search2 search2 = new Search2(0);
 
         ViewPager viewpager = findViewById(R.id.viewpager); //뷰페이저
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager()); //뷰페이저 어댑터에 search1, search2 프래그먼트가 붙어있음
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager()); //뷰페이저 어댑터에 search1, search2 프래그먼트를 붙임.
         adapter.addItem(search1);
         adapter.addItem(search2);
         viewpager.setAdapter(adapter);

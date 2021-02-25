@@ -18,6 +18,7 @@ import com.example.courseregistration.Fragment.RegisterFragment3;
 import com.example.courseregistration.Fragment.RegisterFragment4;
 import com.google.android.material.tabs.TabLayout;
 
+//수강신청 액티비티
 public class RegisterActivity extends AppCompatActivity {
 
     @Override
@@ -28,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar =getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowTitleEnabled(false);//기본 제목을 없애줍니다.
+        actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         RegisterFragment1 registerFragment1 = new RegisterFragment1(0);

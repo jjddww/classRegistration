@@ -21,11 +21,6 @@ import com.example.courseregistration.connection.PreferenceManager;
 import com.example.courseregistration.connection.RetrofitAPI;
 import com.example.courseregistration.connection.ServiceGenerator;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +30,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
+//수강신청 메뉴에 관한 목록들을 보여주는 리사이클러뷰 어댑터
 public class RecyclerAdapter_reserve extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<ArrayList<String>> list;
     int select;
@@ -61,15 +58,20 @@ public class RecyclerAdapter_reserve extends RecyclerView.Adapter<RecyclerView.V
             String id = PreferenceManager.getString(itemView.getContext(), "userID");
             RetrofitAPI retrofitAPI = ServiceGenerator.createService(RetrofitAPI.class, token);
 
-
+            //수강신청 버튼 동작
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String classnum_str = classnum.getText().toString();
                     String division_str = division.getText().toString();
                     String classtime_info = classroom.getText().toString();
-                    Map map = new HashMap(); map.put("id",id); map.put("classnum", classnum_str); map.put("division",division_str);
+
+                    Map map = new HashMap();
+                    map.put("id",id);
+                    map.put("classnum", classnum_str);
+                    map.put("division",division_str);
                     map.put("classtime", classtime_info);
+
                     retrofitAPI.register_reserve(map).enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -86,6 +88,8 @@ public class RecyclerAdapter_reserve extends RecyclerView.Adapter<RecyclerView.V
                                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
+                                        //모든 액티비티를 종료한 후 로그인 화면으로 유도
+
                                         Intent login = new Intent(itemView.getContext(), LoginActivity.class);
                                         Intent intent = ((Activity)itemView.getContext()).getIntent();
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
@@ -156,9 +160,13 @@ public class RecyclerAdapter_reserve extends RecyclerView.Adapter<RecyclerView.V
                     String classnum_str = classnum.getText().toString();
                     String division_str = division.getText().toString();
                     String classtime_info = classroom.getText().toString();
+
                     Map map = new HashMap();
-                    map.put("id", id); map.put("classnum", classnum_str); map.put("division", division_str);
+                    map.put("id", id);
+                    map.put("classnum", classnum_str);
+                    map.put("division", division_str);
                     map.put("classtime", classtime_info);
+
                     retrofitAPI.register_search(map).enqueue(new Callback() {
                         AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
                         @Override
@@ -174,6 +182,8 @@ public class RecyclerAdapter_reserve extends RecyclerView.Adapter<RecyclerView.V
                                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
+                                        //모든 액티비티를 종료한 후 로그인 화면으로 유도
+
                                         Intent login = new Intent(itemView.getContext(), LoginActivity.class);
                                         Intent intent = ((Activity)itemView.getContext()).getIntent();
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
@@ -232,6 +242,7 @@ public class RecyclerAdapter_reserve extends RecyclerView.Adapter<RecyclerView.V
             credit = (TextView) itemView.findViewById(R.id.credit_register2);
             division = (TextView) itemView.findViewById(R.id.classDivision_register2);
             btn = (Button) itemView.findViewById(R.id.register_delete_btn);
+
             String token = PreferenceManager.getString(itemView.getContext(),"accessToken");
             String id = PreferenceManager.getString(itemView.getContext(), "userID");
             RetrofitAPI retrofitAPI = ServiceGenerator.createService(RetrofitAPI.class, token);
@@ -240,11 +251,14 @@ public class RecyclerAdapter_reserve extends RecyclerView.Adapter<RecyclerView.V
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
-                   // System.out.println("리스트는?"+list); System.out.println(list.size()); System.out.println(pos);
+
                     String classnum_str = classnum.getText().toString();
                     String division_str = division.getText().toString();
                     Map map = new HashMap();
-                    map.put("id", id); map.put("classnum", classnum_str); map.put("division", division_str);
+                    map.put("id", id);
+                    map.put("classnum", classnum_str);
+                    map.put("division", division_str);
+
                     retrofitAPI.RegisterDelete(map).enqueue(new Callback() {
                         AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
                         @Override
@@ -372,6 +386,8 @@ public class RecyclerAdapter_reserve extends RecyclerView.Adapter<RecyclerView.V
         return -1;
     }
 
+
+    //다이얼로그 메시지 메소드
     public void showDialog(String str, AlertDialog.Builder builder){
         builder.setTitle("안내메시지");
         builder.setMessage(str);
