@@ -11,6 +11,7 @@
 *통신 - Retrofit2
 
 **일반적으로 학교에서 학생에게 학번과 비밀번호를 부여하므로 회원가입 기능을 구현하지 않음.
+
 **접속가능 ID(학번): 20210640  PW:020913
 
 ### 1. 로그인 및 로그아웃
@@ -90,4 +91,4 @@ MY-SQL의 트리거 사용으로 수강신청과 삭제 동작이 일어날 때�
 <img src="https://user-images.githubusercontent.com/50095740/109157675-b25a9980-77b5-11eb-95a3-81e8c0300da9.jpg" width="260" height="500">
 
 ##### *시간표 확인
-<img src="https://user-images.githubusercontent.com/50095740/109157742-cbfbe100-77b5-11eb-906d-1a6938182c97.jpg" width="280" height="520"">
+<img src="https://user-images.githubusercontent.com/50095740/109157742-cbfbe100-77b5-11eb-906d-1a6938182c97.jpg" width="280" height="520">
