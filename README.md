@@ -16,7 +16,7 @@
 
 로그인 성공 시
 
-![로그인](https://user-images.githubusercontent.com/50095740/109131934-a1e6f680-7796-11eb-8668-2a7963c51d9b.gif)  
+![로그인](https://user-images.githubusercontent.com/50095740/109131934-a1e6f680-7796-11eb-8668-2a7963c51d9b.gif){: width="200" height="400"}  
 
 정보가 틀렸을 경우
 
