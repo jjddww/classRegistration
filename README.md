@@ -12,6 +12,7 @@
 
 
 ### 1. 로그인 및 로그아웃
+
 서버로부터 받은 응답에 따라 처리하도록 설계
 
 로그인 성공 시
@@ -68,13 +69,23 @@ Retrofit통신으로 서버로부터 받아온 json 데이터를 파싱한 후 �
 
 ### 5. 수강신청 및 시간표 확인. 
 
-#### 장바구니에 담아둔 과목 수강신청, 자신이 과목을 직접 조회하여 수강신청, 학수번호와 분반을 직접 입력하여 신청할 수 있으며
-#### 신청완료 후 신청 내역을 볼 수 있다. 또한 툴바에 위치한 시간표 아이콘을 통해 시간표를 시각적으로 확인할 수 있다.
-#### 신청가능한 학점을 초과하였을 경우 수강신청이 불가하다는 메시지를 띄운다.
-#### 시간표가 겹치는 과목과 중복된 과목을 수강신청하려 시도했을 경우에도 신청 불가 메시지가 나타난다.
+장바구니에 담아둔 과목 수강신청, 자신이 과목을 직접 조회하여 수강신청, 학수번호와 분반을 직접 입력하여 신청할 수 있으며
+신청완료 후 신청 내역을 조회하며 신청 취소 가능. 또한 툴바에 위치한 시간표 아이콘을 눌러 시간표를 시각적으로 확인할 수 있음.
+테이블에서 학수번호와 분반을 기본키로 지정하여 중복된 과목을 수강신청하려 시도했을 경우 신청 불가 메시지가 나타남.
+MY-SQL의 트리거 사용으로 수강신청과 삭제 동작이 일어날 때마다 수강 가능 학점을 자동으로 갱신하며 수강 가능 학점을 초과하였을 경우 신청 불가 메시지가 나타남.
 
 ##### *수강신청 화면 (장바구니 목록, 직접 검색, 학수번호로 검색)
 <img src="https://user-images.githubusercontent.com/50095740/109156005-a968c880-77b3-11eb-9b6f-a87a17695fa7.jpg" width="260" height="500">   <img src="https://user-images.githubusercontent.com/50095740/109156194-e634bf80-77b3-11eb-99e3-45b925f5bc61.jpg" width="260" height="500">  <img src="https://user-images.githubusercontent.com/50095740/109156285-ff3d7080-77b3-11eb-9fde-94bb4281c01f.jpg" width="260" height="500">  
 
+##### *수강신청 성공 화면
+<img src="https://user-images.githubusercontent.com/50095740/109156633-68bd7f00-77b4-11eb-982c-6ff942819cd2.jpg" width="260" height="500"> 
+
+##### *수강신청 실패 화면 (학점 부족, 중복과목 신청)
+<img src="https://user-images.githubusercontent.com/50095740/109157429-55f77a00-77b5-11eb-918f-7bab710118ed.jpg" width="260" height="500">   <img src="https://user-images.githubusercontent.com/50095740/109157497-6f002b00-77b5-11eb-9f70-a2a0d24105c2.jpg" width="260" height="500">   
 
 
+##### *수강신청 내역 확인
+<img src="https://user-images.githubusercontent.com/50095740/109157675-b25a9980-77b5-11eb-95a3-81e8c0300da9.jpg" width="260" height="500">
+
+##### *시간표 확인
+<img src="https://user-images.githubusercontent.com/50095740/109157742-cbfbe100-77b5-11eb-906d-1a6938182c97.jpg" width="280" height="520"">
