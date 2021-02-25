@@ -33,6 +33,8 @@
 
 
 
+
+
 ### 2. 세션 만료 시 화면
 로그인 성공 시 서버로부터 15분의 유효시간을 가진 토큰을 받아 사용. (Node.js의 JWT 라이브러리 사용하여 토큰 발급)
 
@@ -44,6 +46,9 @@
 ![세션만료](https://user-images.githubusercontent.com/50095740/109131452-2a18cc00-7796-11eb-8c17-9163a515b07a.gif)
 
 
+
+
+
 ### 3. 과목 조회
 Spinner가 자신의 전공으로 미리 셋팅 되어 있음. 
 
@@ -53,21 +58,30 @@ Retrofit통신으로 서버로부터 받아온 json 데이터를 파싱한 후 �
 ![과목조회](https://user-images.githubusercontent.com/50095740/109138959-4caee300-779e-11eb-832b-67500e00b7be.gif)
 
 
+
+
+
 ### 4. 장바구니 담기, 삭제. 
 리사이클러뷰를 사용하여 목록을 보임.
 이미 장바구니에 담은 과목을 담으려 시도할 경우 메시지를 띄움.
+
 
 ##### *과목조회 화면
 
 <img src="https://user-images.githubusercontent.com/50095740/109141001-8ed92400-77a0-11eb-89e4-90f5bc2b44d3.jpg" width="350" height="600">   <img src="https://user-images.githubusercontent.com/50095740/109141531-2e96b200-77a1-11eb-8b14-87c06f432d5a.jpg" width="350" height="600">
 
+
 ##### *장바구니 담기 신청완료, 중복 과목 메시지
 
 <img src="https://user-images.githubusercontent.com/50095740/109142078-cb594f80-77a1-11eb-99a6-c4506a9a0138.jpg" width="350" height="600">   <img src="https://user-images.githubusercontent.com/50095740/109142216-f2b01c80-77a1-11eb-995d-6503c41cae6f.jpg" width="350" height="600">
 
+
 ##### *장바구니 내역 삭제
 
 ![장바구니내역삭제](https://user-images.githubusercontent.com/50095740/109154256-63126a00-77b1-11eb-8ac9-d55beee008fa.gif)
+
+
+
 
 
 ### 5. 수강신청 및 시간표 확인. 
@@ -80,11 +94,15 @@ Retrofit통신으로 서버로부터 받아온 json 데이터를 파싱한 후 �
 
 MY-SQL의 트리거 사용으로 수강신청과 삭제 동작이 일어날 때마다 수강 가능 학점을 자동으로 갱신하며 수강 가능 학점을 초과하였을 경우 신청 불가 메시지가 나타남.
 
+
 ##### *수강신청 화면 (장바구니 목록, 직접 검색, 학수번호로 검색)
 <img src="https://user-images.githubusercontent.com/50095740/109156005-a968c880-77b3-11eb-9b6f-a87a17695fa7.jpg" width="260" height="500">   <img src="https://user-images.githubusercontent.com/50095740/109156194-e634bf80-77b3-11eb-99e3-45b925f5bc61.jpg" width="260" height="500">  <img src="https://user-images.githubusercontent.com/50095740/109156285-ff3d7080-77b3-11eb-9fde-94bb4281c01f.jpg" width="260" height="500">  
 
+
 ##### *수강신청 성공 화면
 <img src="https://user-images.githubusercontent.com/50095740/109156633-68bd7f00-77b4-11eb-982c-6ff942819cd2.jpg" width="260" height="500"> 
+
+
 
 ##### *수강신청 실패 화면 (학점 부족, 중복과목 신청)
 <img src="https://user-images.githubusercontent.com/50095740/109157429-55f77a00-77b5-11eb-918f-7bab710118ed.jpg" width="260" height="500">   <img src="https://user-images.githubusercontent.com/50095740/109157497-6f002b00-77b5-11eb-9f70-a2a0d24105c2.jpg" width="260" height="500">   
@@ -92,6 +110,7 @@ MY-SQL의 트리거 사용으로 수강신청과 삭제 동작이 일어날 때�
 
 ##### *수강신청 내역 확인
 <img src="https://user-images.githubusercontent.com/50095740/109157675-b25a9980-77b5-11eb-95a3-81e8c0300da9.jpg" width="260" height="500">
+
 
 ##### *시간표 확인
 <img src="https://user-images.githubusercontent.com/50095740/109157742-cbfbe100-77b5-11eb-906d-1a6938182c97.jpg" width="300" height="580">
